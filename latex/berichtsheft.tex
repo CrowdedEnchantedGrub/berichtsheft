@@ -1,0 +1,94 @@
+\documentclass[11pt, ngerman, oneside]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{float}
+%\usepackage{fullpage}
+
+\usepackage{geometry}
+\geometry{a4paper, left=20mm, top=40mm, total={170mm, 227mm}}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{\textbf{Ausbildungsnachweis}}
+\rhead{Max Mustermann}
+\cfoot{}
+\setlength\parindent{0pt}
+\setlength\headheight{14pt}
+
+\newcounter{week}[section]
+\newenvironment{weeklyjournal}[3]
+{
+\refstepcounter{week}
+
+\begin{table}[H]
+    \begin{tabular}{lllllr}
+%        \multicolumn{4}{l}{\textbf{Ausbildungsnachweis}} &  \\
+        & & & & \\
+        \footnotesize Nr & \footnotesize Ausbildungswoche vom & \footnotesize bis & \hspace{60mm} & \footnotesize
+        Ausbildungsjahr \\
+        \theweek & #1 & #2 & & #3
+    \end{tabular}
+\end{table}
+
+\large
+\textbf{Betriebliche Tätigkeiten}
+\normalsize
+\vspace{9pt}
+
+}
+{
+
+\vspace*{\fill}
+Durch die nachfolgenden Unterschriften wird die Richtigkeit und Vollständigkeit der obigen Angaben bestätigt
+\vspace{24mm}
+
+\hspace*{30mm}
+\footnotesize Auszubildender \hfill Ausbilder \normalsize
+\hspace*{30mm}
+\newpage
+}
+
+\begin{document}
+
+    \begin{titlepage}
+
+        \begin{center}
+            \LARGE
+            \textbf{Deckblatt Ausbildungsnachweis}
+            \normalsize
+
+            \begin{table}[H]
+                \bgroup
+                \def\arraystretch{2}
+                \begin{tabular}{ll}
+                    
+                    Name & Mustermann \\ 
+                    Vorname & Max Joseph \\ 
+                    Geburtsdatum & 01. Januar 2000 \\ 
+                    Privatadresse & \begin{tabular}[c]{@{}l@{}}
+                                        Blumenstraße 13\\ 12345 Entenhausen
+                    \end{tabular} \\ 
+                    \textbf{Ausbildungsberuf} & \textbf{Fachinformatiker (Systementwicklung)} \\ 
+                    Ausbildungsbetrieb & ACME GmbH \& Co. KG \\ 
+                    Anschrift des Ausbildungsbetriebes & \begin{tabular}[c]{@{}l@{}}
+                                                             Blumenstraße 14\\ 12345 Entenhausen
+                    \end{tabular} \\ 
+                    Ausbilder & Anton Ausbilder \\ 
+                    Ausbildungsbeginn & 01. Januar 2017 \\ 
+                    Ausbildungsende & 01. Januar 2020 \\ 
+                \end{tabular}
+                \egroup
+            \end{table}
+        \end{center}
+
+    \end{titlepage}
+
+%    Hier werden nun die Wochen, die aus dem PHP-Skript generiert wurden, aufgelistet
+%    \input{weeks/2019-02-04.tex}
+%    \input{weeks/2019-02-11.tex}
+%    \input{weeks/2019-02-18.tex}
+%    \input{weeks/2019-02-25.tex}
+
+\end{document}
